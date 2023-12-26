@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/PrasanthKumar0/-jenkins-ansible-playbook-tomcat9-setup.git'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/PrasanthKumar0/jenkins-ansible-playbook-tomcat9-setup.git'
             }
         }
 
