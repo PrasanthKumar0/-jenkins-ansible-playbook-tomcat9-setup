@@ -4,18 +4,13 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/PrasanthKumar0/jenkins-ansible-playbook-tomcat9-setup.git'
+                git branch: 'main', changelog: false, poll: false, url: 'https://github.com/PrasanthKumar0/-jenkins-ansible-playbook-tomcat9-setup.git'
             }
         }
 
         stage('Run Ansible Playbook') {
             steps {
-                ansiblePlaybook credentialsId: 'Jenkins-Ansible-Credentials',
-                                disableHostKeyChecking: true,
-                                installation: 'Ansible',
-                                inventory: '/etc/ansible/hosts',
-                                playbook: 'install_tomcat9.yml',
-                                vaultTmpPath: ''
+                ansiblePlaybook credentialsId: 'jenkins-Ansible', disableHostKeyChecking: true, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: 'install_tomcat9.yml', vaultTmpPath: ''
             }
         }
     }
