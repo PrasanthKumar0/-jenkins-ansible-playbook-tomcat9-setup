@@ -10,12 +10,11 @@ pipeline {
 
         stage('Run Ansible Playbook') {
             steps {
-                ansiblePlaybook credentialsId: 'Jenkins-Ansible',
+                ansiblePlaybook credentialsId: 'Jenkins-Ansible-Credentials',
                                 disableHostKeyChecking: true,
                                 installation: 'Ansible',
                                 inventory: '/etc/ansible/hosts',
                                 playbook: 'install_tomcat9.yml',
-                                private_key_file: '/home/ubuntu/.ssh/id_rsa',
                                 vaultTmpPath: ''
             }
         }
